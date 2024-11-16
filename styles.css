@@ -1,0 +1,93 @@
+* {
+  padding: 0;
+  margin: 0;
+  background-color: #ffccea;
+  font-family: "Playwrite GB S", sans-serif;
+}
+.countdown {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.countdown span {
+  font-weight: bold;
+}
+
+.content {
+  display: none;
+}
+.toggleMusicButton {
+  color: white;
+}
+.hero-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero-section h1 {
+  margin: 5% auto;
+  font-size: 2.5rem;
+  font-family: "Caveat", cursive;
+  color: #b03052;
+}
+
+.image-container {
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  height: auto;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 70%;
+  height: auto;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  transition: opacity 2s ease-in-out;
+}
+.img1 {
+  animation: fadeInOut 8s infinite;
+}
+
+.img2 {
+  animation: fadeOutIn 8s infinite;
+}
+
+@keyframes fadeInOut {
+  0%,
+  25% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutIn {
+  0%,
+  25% {
+    opacity: 0;
+  }
+  50%,
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.message-section {
+  padding: 20px; /* Add some padding for spacing */
+  text-align: center; /* Center align text */
+  font-size: 1.2rem; /* Adjust font size as needed */
+  color: #333;
+  margin-top: 55%;
+}

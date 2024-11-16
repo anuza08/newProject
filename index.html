@@ -1,0 +1,116 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Sahil's 21'th</title>
+    
+  </head>
+  <body>
+    <!-- Countdown Timer -->
+    <div class="countdown">
+      <p>Website will be available in:</p>
+      <p>
+        <span id="days">00</span> Days, <span id="hours">00</span> Hours,
+        <span id="minutes">00</span> Minutes,
+        <span id="seconds">00</span> Seconds
+      </p>
+    </div>
+
+    <!-- Website Content -->
+    <div class="content">
+      <div class="hero-section">
+        <h1>Happy 21'st Birthday Anuja's Property</h1>
+        <div class="img-section">
+          <img src="./images/img1.jpg" alt="Image 1" class="hero-img img1" />
+          <img src="./images/img2.png" alt="Image 2" class="hero-img img2" />
+        </div>
+      </div>
+
+      <!-- Music Player -->
+      <div class="music-player">
+        <audio id="backgroundMusic" loop>
+          <source src="./audio/birthday-song.mp3" type="audio/mp3" />
+          Your browser does not support the audio element.
+        </audio>
+        <button id="toggleMusicButton">Play Music</button>
+      </div>
+
+      <div class="message-section">
+        <p>
+          Well now that you are 21, there are few things I want you to know
+          baby;
+          <br />
+          I love you the most in the world, more than you could ever imagine.
+          Before meeting you, I didn't know loving someone could be this
+          beautiful...
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // Countdown logic
+      const countdownElement = document.querySelector(".countdown");
+      const contentElement = document.querySelector(".content");
+
+      const endTime = new Date();
+      endTime.setHours(24, 0, 0, 0); // Today at 12 AM
+
+      function updateCountdown() {
+        const now = new Date();
+        const remainingTime = endTime - now;
+
+        if (remainingTime <= 0) {
+          // When countdown ends
+          countdownElement.style.display = "none";
+          contentElement.style.display = "block";
+          clearInterval(countdownInterval);
+        } else {
+          // Update countdown
+          const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((remainingTime / (1000 * 60 * 60)) % 24);
+          const minutes = Math.floor((remainingTime / (1000 * 60)) % 60);
+          const seconds = Math.floor((remainingTime / 1000) % 60);
+
+          document.getElementById("days").textContent = String(days).padStart(
+            2,
+            "0"
+          );
+          document.getElementById("hours").textContent = String(hours).padStart(
+            2,
+            "0"
+          );
+          document.getElementById("minutes").textContent = String(
+            minutes
+          ).padStart(2, "0");
+          document.getElementById("seconds").textContent = String(
+            seconds
+          ).padStart(2, "0");
+        }
+      }
+
+      // Update countdown every second
+      const countdownInterval = setInterval(updateCountdown, 1000);
+
+      // Music toggle button
+      const music = document.getElementById("backgroundMusic");
+      const toggleButton = document.getElementById("toggleMusicButton");
+
+      toggleButton.addEventListener("click", () => {
+        if (music.paused) {
+          music.play();
+          toggleButton.textContent = "Pause Music";
+        } else {
+          music.pause();
+          toggleButton.textContent = "Play Music";
+        }
+      });
+    </script>
+  </body>
+</html>
