@@ -12,103 +12,47 @@
     <title>Sahil's 21'th</title>
   </head>
   <body>
-    <!-- Countdown Timer -->
-    <div class="countdown">
-      <p>Surprise will be available in:</p>
+    <div class="hero-section">
+      <h1>Happy 21'st Birthday Anuja's Property</h1>
+      <div class="img-section">
+        <img src="./images/img1.jpg" alt="Image 1" class="hero-img img1" />
+        <img src="./images/img2.png" alt="Image 2" class="hero-img img2" />
+      </div>
+    </div>
+
+    <!-- Music Player -->
+    <div class="music-player">
+      <audio id="backgroundMusic" loop>
+        <source src="./audio/birthday-song.mp3" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+      <button id="toggleMusicButton">Play Music</button>
+    </div>
+
+    <div class="message-section">
       <p>
-        <span id="days">00</span> Days, <span id="hours">00</span> Hours,
-        <span id="minutes">00</span> Minutes,
-        <span id="seconds">00</span> Seconds
+        Well now that you are 21, there are few things I want you to know baby;
+        <br />
+        I love you the most in the world, more than you could ever imagine.
+        Before meeting you, I didn't know loving someone could be this
+        beautiful. I fall in love with you every moment, every minute. Bae, I
+        always wish you near me, always! I cry every time thinking about the
+        distance between us. You know how much I love being near you, close to
+        you, watching you. That's the best antidepressant pill, but on top of it
+        the greatest thing in life is watching the love of your life achieving
+        their dreams. I always, always want you to be happy Sahil because you
+        deserve all of it. You have given me so much love, care, support, time,
+        and so much more that I can't even count. Now it's my time, baby. You
+        know we will always have each other's back, and I'm going nowhere. I'm
+        always here whenever you need me and always rooting for your happiness
+        because when you are happy, I'm the happiest. I love you, Sahil (Kaju),
+        and I'm so proud of you.<br />
+        LOVE, CHICA ❤️
       </p>
     </div>
-
-    <!-- Website Content -->
-    <div class="content">
-      <div class="hero-section">
-        <h1>Happy 21'st Birthday Anuja's Property</h1>
-        <div class="img-section">
-          <img src="./images/img1.jpg" alt="Image 1" class="hero-img img1" />
-          <img src="./images/img2.png" alt="Image 2" class="hero-img img2" />
-        </div>
-      </div>
-
-      <!-- Music Player -->
-      <div class="music-player">
-        <audio id="backgroundMusic" loop>
-          <source src="song.mp3" type="audio/mp3" />
-          Your browser does not support the audio element.
-        </audio>
-        <button id="toggleMusicButton">Play Music</button>
-      </div>
-
-      <div class="message-section">
-        <p>
-          Well now that you are 21, there are feww this I want you to know baby;
-          <br />
-          I love you the most in the world, more than you could ever imagine.
-          Before meeting I didn't knew loving someone can be this beautiful. I
-          fall in love with you every moment, every minutes. Bae I always wish
-          you near me, always! I cry everytime thinking about the distance
-          between us. You know how much I love being near you, close to you,
-          watch you, that's the most antidepressant pills, but on top of it the
-          greatest thing in life is watching the love of your life achieving his
-          dreams and I always , always want you to be happy Sahil, because you
-          deserve all of it.You have gave me so much love, care, support, time
-          and so much that I can't even count and now it's my time baby. You
-          know we will always have each other's back and I'm going nowhere , I'm
-          always here, whenever you need me and always rooting for your
-          happiness. because when you are happy I'm the happiest. I love you
-          sahil (kaju) and I'm so proud of you.<br />
-          LOVE CHICA ❤️
-        </p>
-      </div>
-    </div>
+    <div class="memories"></div>
 
     <script>
-      // Countdown logic
-      const countdownElement = document.querySelector(".countdown");
-      const contentElement = document.querySelector(".content");
-
-      const endTime = new Date();
-      endTime.setHours(24, 0, 0, 0); // Today at 12 AM
-
-      function updateCountdown() {
-        const now = new Date();
-        const remainingTime = endTime - now;
-
-        if (remainingTime <= 0) {
-          // When countdown ends
-          countdownElement.style.display = "none";
-          contentElement.style.display = "block";
-          clearInterval(countdownInterval);
-        } else {
-          // Update countdown
-          const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((remainingTime / (1000 * 60 * 60)) % 24);
-          const minutes = Math.floor((remainingTime / (1000 * 60)) % 60);
-          const seconds = Math.floor((remainingTime / 1000) % 60);
-
-          document.getElementById("days").textContent = String(days).padStart(
-            2,
-            "0"
-          );
-          document.getElementById("hours").textContent = String(hours).padStart(
-            2,
-            "0"
-          );
-          document.getElementById("minutes").textContent = String(
-            minutes
-          ).padStart(2, "0");
-          document.getElementById("seconds").textContent = String(
-            seconds
-          ).padStart(2, "0");
-        }
-      }
-
-      // Update countdown every second
-      const countdownInterval = setInterval(updateCountdown, 1000);
-
-      // Music toggle button
       const music = document.getElementById("backgroundMusic");
       const toggleButton = document.getElementById("toggleMusicButton");
 
